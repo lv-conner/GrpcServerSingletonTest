@@ -1,0 +1,12 @@
+﻿syntax = "proto3";
+package Counter;
+option csharp_namespace="CounterService";
+
+import "google/protobuf/empty.proto";
+service CounterGrpcService{
+	rpc GetCurrent(google.protobuf.Empty) returns (CounterResponse){};
+}
+
+message CounterResponse{
+	int32 Value = 1;
+}
